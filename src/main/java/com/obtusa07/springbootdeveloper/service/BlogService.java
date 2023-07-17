@@ -6,6 +6,8 @@ import com.obtusa07.springbootdeveloper.dto.AddArticleRequest;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 /**
  * The type Blog service.
  */
@@ -22,5 +24,14 @@ public class BlogService {
      */
     public Article save(AddArticleRequest request) {
         return blogRepository.save(request.toEntity());
+    }
+
+    /**
+     * Find all list.
+     *
+     * @return the list
+     */
+    public List<Article> findAll() {
+        return blogRepository.findAll();
     }
 }
