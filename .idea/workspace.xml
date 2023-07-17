@@ -5,6 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="629da668-d144-491c-b920-07e2974e59a6" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/obtusa07/springbootdeveloper/domain/Article.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
     </list>
@@ -95,7 +96,7 @@
       <option name="presentableId" value="Default" />
       <updated>1689572539544</updated>
       <workItem from="1689572540562" duration="12000" />
-      <workItem from="1689572618406" duration="1797000" />
+      <workItem from="1689572618406" duration="3114000" />
     </task>
     <servers />
   </component>
