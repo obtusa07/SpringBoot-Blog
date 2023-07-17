@@ -6,6 +6,9 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
+/**
+ * The type Article.
+ */
 @Entity
 @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED) //デフォルト コンストラクター
@@ -21,6 +24,12 @@ public class Article {
     @Column(name = "content", nullable = false)
     private String content;
 
+    /**
+     * Instantiates a new Article.
+     *
+     * @param title   the title
+     * @param content the content
+     */
     @Builder
     public Article(String title, String content) {
         this.title = title;
