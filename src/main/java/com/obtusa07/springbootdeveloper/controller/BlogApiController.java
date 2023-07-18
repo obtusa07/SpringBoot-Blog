@@ -3,6 +3,7 @@ package com.obtusa07.springbootdeveloper.controller;
 import com.obtusa07.springbootdeveloper.domain.Article;
 import com.obtusa07.springbootdeveloper.dto.AddArticleRequest;
 import com.obtusa07.springbootdeveloper.dto.ArticleResponse;
+import com.obtusa07.springbootdeveloper.dto.UpdateArticleRequest;
 import com.obtusa07.springbootdeveloper.service.BlogService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -56,5 +57,14 @@ public class BlogApiController {
         blogService.delete(id);
         return ResponseEntity.ok()
                 .build();
+    }
+
+    @PutMapping("/api/articles/{id}")
+    public ResponseEntity<Article> updateArticle(@PathVariable long id,
+                                                 @RequestBody UpdateArticleRequest request) {
+        Article updatedArticle = blogService.update(id, request);
+        
+        return ResponseEntity.ok()
+                .body(updatedArticle);
     }
 }

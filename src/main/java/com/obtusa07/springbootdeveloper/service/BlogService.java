@@ -3,6 +3,8 @@ package com.obtusa07.springbootdeveloper.service;
 import com.obtusa07.springbootdeveloper.BlogRepository.BlogRepository;
 import com.obtusa07.springbootdeveloper.domain.Article;
 import com.obtusa07.springbootdeveloper.dto.AddArticleRequest;
+import com.obtusa07.springbootdeveloper.dto.UpdateArticleRequest;
+import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -42,5 +44,14 @@ public class BlogService {
 
     public void delete(long id) {
         blogRepository.deleteById(id);
+    }
+
+    @Transactional // Transaction method
+    public Article update(long id, UpdateArticleRequest request) {
+        Article article = blogRepository.findById(id)
+                .orElseThrow(() -> new IllegalArgumentException("not found: " + id));
+
+        article.update(request.getTitle(), request.getContent());
+        return article;
     }
 }
